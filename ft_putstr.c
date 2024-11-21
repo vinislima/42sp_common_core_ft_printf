@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 21:22:41 by vinda-si          #+#    #+#             */
-/*   Updated: 2024/11/20 21:40:16 by vinda-si         ###   ########.fr       */
+/*   Created: 2024/11/21 10:34:12 by vinda-si          #+#    #+#             */
+/*   Updated: 2024/11/21 18:04:57 by vinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	ft_putstr(const char *string);
 
 int	ft_putstr(const char *string)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (!string)
 		string = "(null)";
-	while (string != '\0')
+	while (string[count] != '\0')
 	{
 		ft_putchar(string[count]);
 		count++;

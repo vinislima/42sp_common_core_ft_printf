@@ -5,37 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 12:59:36 by vinda-si          #+#    #+#             */
-/*   Updated: 2024/11/21 13:00:07 by vinda-si         ###   ########.fr       */
+/*   Created: 2024/11/21 15:37:42 by vinda-si          #+#    #+#             */
+/*   Updated: 2024/11/21 18:03:35 by vinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putlhexa(unsigned int num)
+int	ft_puthexa(unsigned int num, char signal);
+
+int	ft_puthexa(unsigned int num, char signal)
 {
-	int	count;
+	char	buffer[8];
+	int		count;
+	int		index;
 
 	count = 0;
-	if (num >= 16)
-		count += ft_putlhexa(num / 16);
-	if ((num % 16) < 10)
-		count += ft_putchar((num % 16) + '0');
-	else
-		count += ft_putchar((num % 16) - 10 + 'a');
-	return (count);
-}
-
-int	ft_putuhexa(unsigned int num)
-{
-	int	count;
-
-	count = 0;
-	if (num >= 16)
-		count += ft_putuhexa(num / 16);
-	if ((num % 16) < 10)
-		count += ft_putchar((num % 16) + '0');
-	else
-		count += ft_putchar((num % 16) - 10 + 'A');
+	index = 0;
+	if (num == 0)
+		buffer[index++] = '0';
+	while (num > 0)
+	{
+		if ((num % 16) < 10)
+			buffer[index++] = (num % 16) + '0';
+		else
+		{
+			if (signal == 'x')
+				buffer[index++] = (num % 16) - 10 + 'a';
+			else
+				buffer[index++] = (num % 16) - 10 + 'A';
+		}
+		num /= 16;
+	}
+	while (--index >= 0)
+		count += ft_putchar(buffer[index]);
 	return (count);
 }

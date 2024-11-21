@@ -5,16 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 13:00:25 by vinda-si          #+#    #+#             */
-/*   Updated: 2024/11/21 13:01:04 by vinda-si         ###   ########.fr       */
+/*   Created: 2024/11/21 16:50:59 by vinda-si          #+#    #+#             */
+/*   Updated: 2024/11/21 18:03:09 by vinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int	ft_putnbr(int num);
+
 int	ft_putnbr(int num)
 {
+	char	buffer[11];
 	int		count;
+	int		index;
 	long	number;
 
 	count = 0;
@@ -22,10 +26,17 @@ int	ft_putnbr(int num)
 	if (num < 0)
 	{
 		count += ft_putchar('-');
-		number *= -1;
+		number = -number;
 	}
-	if (number >= 10)
-		count += ft_putnbr(number / 10);
-	count += ft_putchar((number % 10) + '0');
+	index = 0;
+	if (number == 0)
+		buffer[index++] = '0';
+	while (number > 0)
+	{
+		buffer[index++] = (number % 10) + '0';
+		number /= 10;
+	}
+	while (--index >= 0)
+		count += ft_putchar(buffer[index]);
 	return (count);
 }
