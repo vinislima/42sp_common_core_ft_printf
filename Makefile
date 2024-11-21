@@ -6,13 +6,19 @@
 #    By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 14:51:43 by vinda-si          #+#    #+#              #
-#    Updated: 2024/11/21 10:36:23 by vinda-si         ###   ########.fr        #
+#    Updated: 2024/11/21 17:30:09 by vinda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c \
+SRCS =	ft_printf.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_putunbr.c \
+		ft_puthexa.c \
+		ft_putnbr.c \
+		ft_putptr.c \
 
 OBJS = $(SRCS:.c=.o)
 
