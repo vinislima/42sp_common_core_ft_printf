@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:08:15 by vinda-si          #+#    #+#             */
-/*   Updated: 2024/11/21 10:24:31 by vinda-si         ###   ########.fr       */
+/*   Created: 2024/11/21 10:34:12 by vinda-si          #+#    #+#             */
+/*   Updated: 2024/11/21 10:39:16 by vinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-
-int	ft_putchar(int signal);
-int	ft_printf(const char *string, ...);
 int	ft_putstr(const char *string);
 
-#endif
+int	ft_putstr(const char *string)
+{
+	int	count;
+
+	count = 0;
+	if (!string)
+		string = "(null)";
+	while (string != '\0')
+	{
+		ft_putchar(string[count]);
+		count++;
+	}
+	return (count);
+}

@@ -6,13 +6,13 @@
 #    By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 14:51:43 by vinda-si          #+#    #+#              #
-#    Updated: 2024/11/20 16:05:43 by vinda-si         ###   ########.fr        #
+#    Updated: 2024/11/21 10:36:23 by vinda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS =	ft_printf.c \
+SRCS = ft_printf.c \
 
 OBJS = $(SRCS:.c=.o)
 
