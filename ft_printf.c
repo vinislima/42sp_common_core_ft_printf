@@ -6,7 +6,7 @@
 /*   By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:10:29 by vinda-si          #+#    #+#             */
-/*   Updated: 2024/11/21 18:05:23 by vinda-si         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:01:59 by vinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,6 @@
 
 int			ft_printf(const char *string, ...);
 static int	ft_signal(va_list args, char signal);
-static int	ft_check_pointer(unsigned long ptr);
-
-static int	ft_check_pointer(unsigned long ptr)
-{
-	int	count;
-
-	count = 0;
-	if (ptr == 0)
-		return (ft_putstr("(nil)"));
-	count += ft_putstr("0x");
-	count += ft_putptr(ptr);
-	return (count);
-}
 
 static int	ft_signal(va_list args, char signal)
 {
@@ -38,7 +25,7 @@ static int	ft_signal(va_list args, char signal)
 	else if (signal == 's')
 		count += ft_putstr(va_arg(args, const char *));
 	else if (signal == 'p')
-		count += ft_check_pointer(va_arg(args, unsigned long));
+		count += ft_putptr(va_arg(args, unsigned long));
 	else if (signal == 'd' || signal == 'i')
 		count += ft_putnbr(va_arg(args, int));
 	else if (signal == 'u')

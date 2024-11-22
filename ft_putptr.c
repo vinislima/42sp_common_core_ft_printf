@@ -6,7 +6,7 @@
 /*   By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:18:44 by vinda-si          #+#    #+#             */
-/*   Updated: 2024/11/21 17:39:43 by vinda-si         ###   ########.fr       */
+/*   Updated: 2024/11/22 10:36:16 by vinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int	ft_putptr(unsigned long ptr)
 	count = 0;
 	index = 0;
 	if (ptr == 0)
-		return (ft_putchar('0'));
+		return (ft_putstr("(nil)"));
+	count += ft_putchar('0');
+	count += ft_putchar('x');
 	while (ptr > 0)
 	{
 		if ((ptr % 16) < 10)
