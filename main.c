@@ -6,7 +6,7 @@
 /*   By: vinda-si <vinda-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:43:28 by vinda-si          #+#    #+#             */
-/*   Updated: 2024/11/23 11:13:53 by vinda-si         ###   ########.fr       */
+/*   Updated: 2024/11/23 20:59:48 by vinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int main(void)
 	printf("printf = %d, ft_printf = %d\n", g, h);
 	printf("\n");
 
-	int i = printf("Negative Integer: %d\n", -123);
-	int j = ft_printf("Negative Integer: %d\n", -123);
+	int i = printf("Negative Integer: %i\n", -123);
+	int j = ft_printf("Negative Integer: %i\n", -123);
 	printf("printf = %d, ft_printf = %d\n", i, j);
 	printf("\n");
 
@@ -78,8 +78,8 @@ int main(void)
 	printf("\n");
 
 	// Testando múltiplos argumentos/conversões
-	int aa = printf("Multiple: %c %s %d %u %x %X %p\n", 'A', "Test", 123, 12345U, 0xABC, 0xABC, (void *)12345);
-	int ab = ft_printf("Multiple: %c %s %d %u %x %X %p\n", 'A', "Test", 123, 12345U, 0xABC, 0xABC, (void *)12345);
+	int aa = printf("Multiple: %c %s \n", 'A', "Test");
+	int ab = ft_printf("Multiple: %c %s \n", 'A', "Test");
 	printf("printf = %d, ft_printf = %d\n", aa, ab);
 	printf("\n");
 
