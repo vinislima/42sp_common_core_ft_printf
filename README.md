@@ -35,10 +35,10 @@ cc -Wall -Wextra -Werror main.c libftprintf.a
 ```
 
 ---
+<details>
+    <summary>Files:</summary>
 
-Files:
-
-- Makefile:
+- [Makefile:](https://github.com/vinislima/42sp_common_core_ft_printf/blob/main/Makefile)
     
     ```makefile
     # **************************************************************************** #
@@ -608,3 +608,4 @@ Files:
     }
     
     ```
+</details>
